@@ -1,0 +1,74 @@
+DB명: dev
+현재 가격 현황을 보여주기 위해 non_ferrousmetals 테이블 생성
+금속 각각의 테이블을 6개 생성 (alumin, copper, lead_, nickel, tin, zinc)
+통계창에 띄워주기 위해, result 테이블에 금속 각각의 종가, 최고, 최저값을 삽입
+---------------------------- 현재 가격 현황 테이블 --------------------------------
+-CREATE TABLE 'dev'.'non_ferrousmetals'(
+	'id' INT NOT NULL AUTO_INCREMENT,
+	'name' VARCHAR(45) NULL,
+	'unit' VARCHAR(45) NULL,
+	'price' VARCHAR(45) NULL,
+	'ratio_mon' VARCHAR(45) NULL,
+	'ratio_year' VARCHAR(45) NULL,
+	'source' VARCHAR(45) NULL,
+	ADD PRIMARYKEY('id'));
+
+---------------------------- 6개의 금속 테이블 -----------------------------------
+- CREATE TABLE 'dev'.'alumin'(
+	'name' VARCHAR(30) NULL,
+	'date' VARCHAR(100) NULL,
+	'price' VARCHAR(45) NULL);
+
+- CREATE TABLE 'dev'.'copper'(
+	'name' VARCHAR(30) NULL,
+	'date' VARCHAR(100) NULL,
+	'price' VARCHAR(45) NULL);
+
+- CREATE TABLE 'dev'.'lead_'(
+	'name' VARCHAR(30) NULL,
+	'date' VARCHAR(100) NULL,
+	'price' VARCHAR(45) NULL);
+
+- CREATE TABLE 'dev'.'nickel'(
+	'name' VARCHAR(30) NULL,
+	'date' VARCHAR(100) NULL,
+	'price' VARCHAR(45) NULL);
+
+- CREATE TABLE 'dev'.'copper'(
+	'name' VARCHAR(30) NULL,
+	'date' VARCHAR(100) NULL,
+	'price' VARCHAR(45) NULL);
+
+- CREATE TABLE 'dev'.'tin'(
+	'name' VARCHAR(30) NULL,
+	'date' VARCHAR(100) NULL,
+	'price' VARCHAR(45) NULL);
+
+- CREATE TABLE 'dev'.'zinc'(
+	'name' VARCHAR(30) NULL,
+	'date' VARCHAR(100) NULL,
+	'price' VARCHAR(45) NULL);
+
+---------------------------- 통계창에 표시하기 위한 테이블 -----------------------------------
+-CREATE TABLE 'dev'.'result'(
+	'name' VARCHAR(30) NULL,
+	'date' VARCHAR(45) NULL,
+	'price' VARCHAR(45) NULL,
+	'min' VARCHAR(45) NULL,
+	'max' VARCHAR(45) NULL);
+
+--------------------------------- 뉴스 정보 테이블 --------------------------------------
+-CREATE TABLE 'dev'.'news'(
+	'Num' INT NOT NULL AUTO_INCREMENT,
+	'Title' VARCHAR(70) NULL,
+	'Link' VARCHAR(200)NULL,
+	ADD PRIMARYKEY('Num'));
+	
+--------------------------------- 게시판 정보 테이블 --------------------------------------
+-CREATE TABLE 'dev'.'gasipan'(
+	'id' INT NOT NULL AUTO_INCREMENT,
+	'name' VARCHAR(45) NULL,
+	'title' VARCHAR(45) NULL,
+	'content' VARCHAR(120) NULL,
+	'time' VARCHAR(45) NULL,
+	ADD PRIMARYKEY('id'));
